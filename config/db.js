@@ -13,22 +13,3 @@ const sequelize = new Sequelize(
 );
 
 module.exports = sequelize;
-
-
-// Test the connection
-async function testConnection() {
-  try {
-    await sequelize.authenticate();
-    console.log('✅ Connection has been established successfully.');
-  } catch (error) {
-    console.error('❌ Unable to connect to the database:', error);
-  }
-}
-
-// db disconnection
-// if (process.env.DEV_MODE !== 'true') {
-//   testConnection();
-// } else {
-//   console.log('🟡 DEV_MODE: Skipping testConnection');
-// }
-testConnection();
